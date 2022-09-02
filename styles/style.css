@@ -1,0 +1,13 @@
+/* font-family: 'Berkshire Swash', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Itim', cursive;
+font-family: 'Manrope', sans-serif; */
+
+.fontGreatVibes{
+    font-family: 'Great Vibes', cursive;
+    font-weight: 900;
+}
+
+.fontManrope{
+    font-family: 'Manrope', sans-serif;
+}
