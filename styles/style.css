@@ -11,3 +11,8 @@ font-family: 'Manrope', sans-serif; */
 .fontManrope{
     font-family: 'Manrope', sans-serif;
 }
+
+/* font color */
+.navTextColor{
+    color: #858585;
+}
