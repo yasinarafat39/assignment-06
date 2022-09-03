@@ -21,9 +21,9 @@
 <body class="bg-light fontManrope container">
     <header>
         <!-- Navbar start -->
-        <nav class="navbar navbar-expand-lg bg-light py-0 border-bottom">
+        <nav class="navbar navbar-expand-lg bg-light my-3 border-bottom">
             <div class="container-fluid">
-                <a class="navbar-brand fw-bold fontGreatVibes" href="#">The Daily <span class="text-warning">Sun</span>
+                <a class="navbar-brand fw-bold fs-2 fontGreatVibes" href="#">The Daily <span class="text-warning">Sun</span>
                     BD</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,14 +34,16 @@
                     </ul>
                     <span class="navbar-text">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
-                            <li class="nav-item">
-                                <a class="nav-link active text-warning" aria-current="page" href="index.html">News</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-warning" href="Blog.html">Blog</a>
-                            </li>
+                            <div class="me-4 d-lg-flex align-items-lg-center">
+                                <li class="nav-item me-2">
+                                    <a class="nav-link active text-warning" aria-current="page" href="index.html">News</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-warning" href="Blog.html">Blog</a>
+                                </li>
+                            </div>
                             <a class="navbar-brand me-0" href="#">
-                                <img src="images/ffff.jpg" alt="" class="rounded-circle border" width="30" height="28">
+                                <img src="images/ffff.jpg" alt="" class="rounded-circle border" width="40" height="45">
                             </a>
                         </ul>
                     </span>
@@ -49,8 +51,7 @@
             </div>
         </nav>
 
-        <div id="news-category-container" class="d-flex justify-content-lg-between justify-content-sm-evenly px-3 py-3 fontManrope">
-            <a class="nav-link navTextColor" href="#">Home</a>
+        <div id="news-category-container" class="d-sm-flex flex-sm-column justify-content-lg-between d-lg-flex flex-lg-row px-3 py-3 fontManrope">
             <a class="nav-link navTextColor" id="category-01" href="#">Breaking news</a>
             <a class="nav-link navTextColor" id="category-02" href="#">Regular news</a>
             <a class="nav-link navTextColor" id="category-03" href="#">International news</a>
@@ -86,10 +87,8 @@
         </section>
 
         <!-- news section -->
-        <section>
-            <div id="news-container" class="mt-4">
-
-            </div>
+        <section id="news-container">
+            
         </section>
 
          
@@ -119,8 +118,8 @@
 
     <!-- footer section -->
     <footer>
-        <section class="bg-white py-3 container border-top">
-            <p class="text-center fw-semibold opacity-75">Copyright 2023 The Daily Sun BD</p>
+        <section class="bg-white py-4 mt-5  container border-top">
+            <p class="text-center my-0 fw-semibold opacity-75">Copyright 2023 The Daily Sun BD</p>
         </section>
     </footer>
 
