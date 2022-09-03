@@ -1,16 +1,42 @@
 
 
-document.getElementById('category-01').addEventListener('click', function() {
-    const url = `https://openapi.programming-hero.com/api/news/category/01`;
+const getNews = (category_id) => {
+    const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
     .then(data => displayNews(data.data))
-    
+}
+
+document.getElementById('category-01').addEventListener('click', function() {
+    // fetch(`https://openapi.programming-hero.com/api/news/categories`)
+    //     .then(res => res.json())
+    //     .then(data = console.log(data.data.news_category))
+    getNews('01');
+});
+
+document.getElementById('category-02').addEventListener('click', function(){
+    getNews('02');
+});
+document.getElementById('category-03').addEventListener('click', function(){
+    getNews('03');
+});
+document.getElementById('category-04').addEventListener('click', function(){
+    getNews('04');
+});
+document.getElementById('category-05').addEventListener('click', function(){
+    getNews('05');
+});
+document.getElementById('category-06').addEventListener('click', function(){
+    getNews('06');
+});
+document.getElementById('category-07').addEventListener('click', function(){
+    getNews('07');
 });
 
 const displayNews = allNews => {
     console.log(allNews);
     const newsContainer = document.getElementById('news-container');
+    newsContainer.innerHTML = ``;
     allNews.forEach(singleNews => {
 
         const {thumbnail_url, title, total_view, details, _id} = singleNews;
