@@ -13,7 +13,7 @@ const displayNews = allNews => {
     const newsContainer = document.getElementById('news-container');
     allNews.forEach(singleNews => {
 
-        const {thumbnail_url, title, total_view, details} = singleNews;
+        const {thumbnail_url, title, total_view, details, _id} = singleNews;
         const {name, published_date, img} = singleNews.author;
 
         const newsDiv = document.createElement('div');
@@ -21,7 +21,7 @@ const displayNews = allNews => {
         newsDiv.innerHTML = `
         <div class="row g-0">
             <div class="col-md-3">
-                <img src="${thumbnail_url}" class="img-fluid w-full h-full rounded-start" alt="...">
+                <img src="${thumbnail_url}" class="img-fluid w-full  rounded-start" alt="...">
             </div>
             <div class="col-md-9">
                 <div class="card-body">
@@ -29,7 +29,7 @@ const displayNews = allNews => {
                     <p class="card-text">${details.length > 100 ? details.slice(0, 400) + "..." : details}</p>
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
-                            <img src="${img}" class="rounded-circle border" alt="author_name" width="40" height="40">
+                            <img src="${img === 'undifined' ? 'N/A' : img}" class="rounded-circle border" alt="author_name" width="40" height="40">
                             &nbsp; &nbsp;
                             <div>
                                 <p class="my-0">${name}</p>
@@ -37,7 +37,8 @@ const displayNews = allNews => {
                             </div>
                         </div>
                         <p class="mt-0 mb-0"> <i class="fa-duotone fa-eye"></i> ${total_view}</p>
-                        <i style='font-size:24px' class='far'>&#xf35a;</i>
+                        <!-- Button trigger modal -->
+                        <i onclick="showDetailsOfNews('${_id}')" style='font-size:24px' class='far' role="button" data-bs-toggle="modal" data-bs-target="#newsDetailsModal">&#xf35a;</i>
                     </div>
                 </div>
             </div>
@@ -45,4 +46,43 @@ const displayNews = allNews => {
         `;
         newsContainer.appendChild(newsDiv);
     });
+}
+
+
+const showDetailsOfNews = newsId => {
+    const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
+    console.log(url);
+    fetch(url)
+        .then(res => res.json())
+        .then(data => displayNewsDatails(data.data[0]))
+}
+
+const displayNewsDatails = singleNews => {
+    const {title, total_view, details, image_url} = singleNews;
+    const {name, published_date, img} = singleNews.author;
+    const {number: rating_number, badge} = singleNews.rating;
+
+    const breakingNews = document.getElementById('category-01');
+    const modalTitle = document.getElementById('newsDetailsModalLabel');
+    modalTitle.innerText = `${breakingNews.innerText}`;
+
+    const modalBody = document.getElementById('modal-body');
+    modalBody.innerHTML = `
+        <img class="img-fluid" src="${image_url}" alt="..."> 
+        <h3 class="my-3">${title}</h3>
+        <p class="mb-4">${details}</p>
+
+        <div> 
+            <h4 class="fw-semibold">Writer:</h4>
+
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex align-items-center">
+                    <img src="${img === 'undifined' ? 'N/A' : img}" class="rounded-circle border" alt="author_name" width="40" height="40">
+                    &nbsp; &nbsp;<p class="mb-0 fw-semibold">${name === 'undifined' ? 'N/A' : name}</p>
+                </div>
+                <p class="fw-semibold mb-0 mt-0">Rating: <span class="text-warning">${rating_number}</span><p>
+                <p class="fw-semibold mb-0">Badge: ${badge}</p>
+            </div>
+        </div>
+    `;
 }

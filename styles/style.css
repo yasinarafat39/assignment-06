@@ -5,13 +5,15 @@ font-family: 'Manrope', sans-serif; */
 
 .fontGreatVibes{
     font-family: 'Great Vibes', cursive;
-    font-weight: 900;
 }
 
 .fontManrope{
     font-family: 'Manrope', sans-serif;
 }
 
+.fontItim{
+    font-family: 'Itim', cursive;
+}
 /* font color */
 .navTextColor{
     color: #858585;
