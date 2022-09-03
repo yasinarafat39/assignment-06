@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- fontAwosome -->
+    <script src="https://kit.fontawesome.com/bf73c86e77.js" crossorigin="anonymous"></script>
+    <!-- Google font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&family=Great+Vibes&family=Itim&family=Manrope&display=swap');
+    </style>
+</head>
+
+<body class="bg-light fontManrope container">
+
+    <header class="mb-5">
+        <!-- Navbar start -->
+        <nav class="navbar navbar-expand-lg bg-light py-0 border-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold fontGreatVibes" href="#">The Daily <span class="text-warning">Sun</span>
+                    BD</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    </ul>
+                    <span class="navbar-text">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold">
+                            <li class="nav-item">
+                                <a class="nav-link active text-warning" aria-current="page" href="index.html">News</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-warning" href="Blog.html">Blog</a>
+                            </li>
+                            <a class="navbar-brand me-0" href="#">
+                                <img src="images/ffff.jpg" alt="" class="rounded-circle border" width="30" height="28">
+                            </a>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        </nav>
+        <!-- Navbar End -->
+    </header>
+
+
+    <main>
+
+
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button text-dark fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Var, Let, and Const – What's the Difference?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        If you want a general rule: always declare variables with const. <br>
+                        var variables can be re-declared and updated <br>
+                        If you think the value of the variable can change, use let. <br>
+                        The let keyword was introduced in ES6 (2015). <br>
+                        Variables defined with let cannot be Redeclared. <br>
+                        Variables defined with let must be Declared before use. <br>
+                        Variables defined with let have Block Scope. <br>
+                        Before ES6 (2015), JavaScript had only Global Scope and Function Scope. <br>
+                        ES6 introduced two important new JavaScript keywords let and const. <br>
+                        These two keywords provide Block Scope in JavaScript. <br>
+                        Variables declared inside a { } block cannot be accessed from outside the block. <br>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-dark fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What are the differences between arrow functions and regular functions in JavaScript?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>JavaScript's arrow functions might seem the same as regular functions on the surface, but they have some very important differences:</p>
+                        <ul>
+                            <li>Syntactical differences</li>
+                            <li>this value (execution context)</li>
+                            <li>Usage as methods</li>
+                            <li>Usage as constructors</li>
+                            <li>arguments binding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button text-dark fw-bold collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        Map(), forEach(), filter(), find(). what's the difference between.
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <h3 class="fw-semibold">map() method:</h3>
+                        <ul>
+                            <li>The map() method creates a new array from calling a function for every array element.</li>
+                            <li>The map() method calls a function once for each element in an array.</li>
+                            <li>The map() method does not execute the function for empty elements.</li>
+                            <li>The map() method does not change the original array.</li>
+                        </ul>
+                        
+                        <h3 class="fw-semibold">forEach() method:</h3>
+                        <ul>
+                            <li>The forEach() method calls a function for each element in an array.</li>
+                            <li>The forEach() method is not executed for empty elements.</li>
+                        </ul>
+
+                        <h3 class="fw-semibold">filter() method:</h3>
+                        <ul>
+                            <li>The filter() method creates a new array filled with elements that pass a test provided by a function.</li>
+                            <li>The filter() method does not execute the function for empty elements.</li>
+                            <li>The filter() method does not change the original array.</li>
+                        </ul>
+
+                        <h3 class="fw-semibold">find() method:</h3>
+                        <ul>
+                            <li>The find() method returns the value of the first element that passes a test.</li>
+                            <li>The find() method executes a function for each array element.</li>
+                            <li>The find() method returns undefined if no elements are found.</li>
+                            <li>The find() method does not execute the function for empty elements.</li>
+                            <li>The find() method does not change the original array.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                    <button class="accordion-button text-dark fw-semibold collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Why we use Template String?
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <strong>Template literals (Template strings).</strong> Template literals are literals delimited with backtick (`) characters, allowing for multi-line strings, for string interpolation with embedded expressions, and for special constructs called tagged templates. <br>
+                        Template literals are enclosed by backtick (`) characters instead of double or single quotes.
+
+                        <ul>
+                            <li>Multi-line strings</li>
+                            <li>String interpolation</li>
+                            <li>Nesting templates</li>
+                            <li>Tagged templates</li>
+                            <li>Raw strings</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -11,10 +11,10 @@ const getNews = (category_id) => {
 }
 
 const categoryName = document.getElementById('category-name');
-document.getElementById('category-01').addEventListener('click', function() {
+
     getNews('01');
-    categoryName.innerText = 'Breaking news';
-});
+    
+
 document.getElementById('category-02').addEventListener('click', function(){
     getNews('02');
     categoryName.innerText = 'Regular news';
