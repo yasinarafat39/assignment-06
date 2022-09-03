@@ -7,34 +7,55 @@ const getNews = (category_id) => {
     .then(data => displayNews(data.data))
 }
 
+const categoryName = document.getElementById('category-name');
 document.getElementById('category-01').addEventListener('click', function() {
-    // fetch(`https://openapi.programming-hero.com/api/news/categories`)
-    //     .then(res => res.json())
-    //     .then(data = console.log(data.data.news_category))
     getNews('01');
+    categoryName.innerText = 'Breaking news';
 });
-
+// const getCategoryName = async() => {
+//     const url = (`https://openapi.programming-hero.com/api/news/categories`)
+//         const res = await fetch(url);
+//         const data = await res.json();
+//         console.log(data.data.news_category);
+// }
+// getCategoryName()
 document.getElementById('category-02').addEventListener('click', function(){
     getNews('02');
+    categoryName.innerText = 'Regular news';
 });
 document.getElementById('category-03').addEventListener('click', function(){
     getNews('03');
+    categoryName.innerText = 'International news';
 });
 document.getElementById('category-04').addEventListener('click', function(){
     getNews('04');
+    categoryName.innerText = 'Sports';
 });
 document.getElementById('category-05').addEventListener('click', function(){
     getNews('05');
+    categoryName.innerText = 'Entertainment';
 });
 document.getElementById('category-06').addEventListener('click', function(){
     getNews('06');
+    categoryName.innerText = 'Cultur';
 });
 document.getElementById('category-07').addEventListener('click', function(){
     getNews('07');
+    categoryName.innerText = 'All news';
 });
 
 const displayNews = allNews => {
     console.log(allNews);
+
+    document.getElementById('total-item').innerText = allNews.length;
+    // Error Message
+    const errorMessage = document.getElementById('error_message');
+    if(allNews.length === 0){
+        errorMessage.classList.remove('d-none');
+    } else{
+        errorMessage.classList.add('d-none');
+    }
+
     const newsContainer = document.getElementById('news-container');
     newsContainer.innerHTML = ``;
     allNews.forEach(singleNews => {
