@@ -1,6 +1,9 @@
 
 
+const loadingSpinner = document.getElementById('loadingSpinner');
 const getNews = (category_id) => {
+    // spinner start
+    loadingSpinner.classList.remove('d-none');
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
     fetch(url)
     .then(res => res.json())
@@ -12,13 +15,6 @@ document.getElementById('category-01').addEventListener('click', function() {
     getNews('01');
     categoryName.innerText = 'Breaking news';
 });
-// const getCategoryName = async() => {
-//     const url = (`https://openapi.programming-hero.com/api/news/categories`)
-//         const res = await fetch(url);
-//         const data = await res.json();
-//         console.log(data.data.news_category);
-// }
-// getCategoryName()
 document.getElementById('category-02').addEventListener('click', function(){
     getNews('02');
     categoryName.innerText = 'Regular news';
@@ -52,6 +48,8 @@ const displayNews = allNews => {
     const errorMessage = document.getElementById('error_message');
     if(allNews.length === 0){
         errorMessage.classList.remove('d-none');
+        // stop spinner
+        loadingSpinner.classList.add('d-none');
     } else{
         errorMessage.classList.add('d-none');
     }
@@ -92,6 +90,8 @@ const displayNews = allNews => {
         </div>
         `;
         newsContainer.appendChild(newsDiv);
+        // spinner stop
+        loadingSpinner.classList.add('d-none');
     });
 }
 
