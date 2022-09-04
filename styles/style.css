@@ -23,3 +23,8 @@ font-family: 'Manrope', sans-serif; */
     max-width: 100%;
     height: 100%;
 }
+
+.categoryList{
+    list-style-type: none;
+    
+}

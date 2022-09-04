@@ -4,16 +4,17 @@ const newsCategoriesContainer = () => {
     fetch(`https://openapi.programming-hero.com/api/news/categories`)
         .then(res => res.json())
         .then(data => displayNewsCategories(data.data.news_category))
+        .catch((err) => console.log("Error:", err.message))
 }
 
 const displayNewsCategories = (allCategories) => {
     const newsCategoriesContainer = document.getElementById('news-category-container');
-
     allCategories.forEach(category => {
-        // console.log(category);
         const li = document.createElement('li');
+        li.classList.add('categoryList');
         li.innerHTML = `
-            <a onclick="getNews('${category.category_id}')">${category.category_name}</a>
+            <a role="button" onclick="getNews('${category.category_id}')"> ${category.category_name}</a>
+            
         `;
         newsCategoriesContainer.appendChild(li);
     });
@@ -23,13 +24,15 @@ const displayNewsCategories = (allCategories) => {
 
 const loadingSpinner = document.getElementById('loadingSpinner');
 const getNews = (category_id) => {
+
     // spinner start
-    // loadingSpinner.classList.remove('d-none');
+    loadingSpinner.classList.remove('d-none');
+
     const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
-    // console.log(url)
     fetch(url)
     .then(res => res.json())
     .then(data => displayNews(data.data))
+    .catch((err) => console.log("Error:", err.message))
 }
 
 
@@ -92,17 +95,17 @@ const displayNews = allNews => {
         `;
         newsContainer.appendChild(newsDiv);
         // spinner stop
-        // loadingSpinner.classList.add('d-none');
+        loadingSpinner.classList.add('d-none');
     });
 }
 
 
 const showDetailsOfNews = newsId => {
     const url = `https://openapi.programming-hero.com/api/news/${newsId}`;
-    // console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => displayNewsDatails(data.data[0]))
+        .catch((err) => console.log("Error:", err.message))
 }
 
 const displayNewsDatails = singleNews => {
@@ -110,7 +113,6 @@ const displayNewsDatails = singleNews => {
     const {name, published_date, img} = singleNews.author;
     const {number: rating_number, badge} = singleNews.rating;
 
-    const breakingNews = document.getElementById('category-01');
     const modalTitle = document.getElementById('newsDetailsModalLabel');
     modalTitle.innerText = `${title}`;
 
