@@ -70,3 +70,54 @@ String interpolation
 Nesting templates
 Tagged templates
 Raw strings
+
+
+
+
+
+
+
+
+ 
+
+
+const categoryName = document.getElementById('category-name');
+
+    getNews('01');
+document.getElementById('category-02').addEventListener('click', function(){
+    getNews('02');
+    categoryName.innerText = 'Regular news';
+});
+document.getElementById('category-03').addEventListener('click', function(){
+    getNews('03');
+    categoryName.innerText = 'International news';
+});
+document.getElementById('category-04').addEventListener('click', function(){
+    getNews('04');
+    categoryName.innerText = 'Sports';
+});
+document.getElementById('category-05').addEventListener('click', function(){
+    getNews('05');
+    categoryName.innerText = 'Entertainment';
+});
+document.getElementById('category-06').addEventListener('click', function(){
+    getNews('06');
+    categoryName.innerText = 'Cultur';
+});
+document.getElementById('category-07').addEventListener('click', function(){
+    getNews('07');
+    categoryName.innerText = 'Arts';
+});
+
+
+
+
+
+<!-- <a class="nav-link navTextColor" id="category-01" href="#">Breaking news</a>
+            <a class="nav-link navTextColor" id="category-02" href="#">Regular news</a>
+            <a class="nav-link navTextColor" id="category-03" href="#">International news</a>
+            <a class="nav-link navTextColor" id="category-04" href="#">Sports</a>
+            <a class="nav-link navTextColor" id="category-05" href="#">Entertainment</a>
+            <a class="nav-link navTextColor" id="category-06" href="#">Cultur</a>
+            <a class="nav-link navTextColor" id="category-07" href="#">Arts</a>
+            <a class="nav-link navTextColor" href="#">All news</a> -->

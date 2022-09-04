@@ -18,9 +18,9 @@
     </style>
 </head>
 
-<body class="bg-light fontManrope container">
+<body class="bg-light fontManrope">
 
-    <header class="mb-5">
+    <header class="mb-5 container">
         <!-- Navbar start -->
         <nav class="navbar navbar-expand-lg bg-light my-3 border-bottom">
             <div class="container-fluid">
@@ -55,63 +55,17 @@
     </header>
 
 
-    <main>
-
+    <main class="container">
 
         <div class="accordion" id="accordionExample">
             <div class="accordion-item">
                 <h2 class="accordion-header" id="headingOne">
                     <button class="accordion-button text-dark fw-bold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        Var, Let, and Const – What's the Difference?
-                    </button>
-                </h2>
-                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        If you want a general rule: always declare variables with const. <br>
-                        var variables can be re-declared and updated <br>
-                        If you think the value of the variable can change, use let. <br>
-                        The let keyword was introduced in ES6 (2015). <br>
-                        Variables defined with let cannot be Redeclared. <br>
-                        Variables defined with let must be Declared before use. <br>
-                        Variables defined with let have Block Scope. <br>
-                        Before ES6 (2015), JavaScript had only Global Scope and Function Scope. <br>
-                        ES6 introduced two important new JavaScript keywords let and const. <br>
-                        These two keywords provide Block Scope in JavaScript. <br>
-                        Variables declared inside a { } block cannot be accessed from outside the block. <br>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                    <button class="accordion-button collapsed text-dark fw-bold" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        What are the differences between arrow functions and regular functions in JavaScript?
-                    </button>
-                </h2>
-                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                    data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <p>JavaScript's arrow functions might seem the same as regular functions on the surface, but they have some very important differences:</p>
-                        <ul>
-                            <li>Syntactical differences</li>
-                            <li>this value (execution context)</li>
-                            <li>Usage as methods</li>
-                            <li>Usage as constructors</li>
-                            <li>arguments binding</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                    <button class="accordion-button text-dark fw-bold collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                         Map(), forEach(), filter(), find(). what's the difference between.
                     </button>
                 </h2>
-                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                     data-bs-parent="#accordionExample">
                     <div class="accordion-body">
                         <h3 class="fw-semibold">map() method:</h3>
@@ -147,6 +101,51 @@
                 </div>
             </div>
             <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed text-dark fw-bold" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What are the differences between arrow functions and regular functions in JavaScript?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p>JavaScript's arrow functions might seem the same as regular functions on the surface, but they have some very important differences:</p>
+                        <ul>
+                            <li>Syntactical differences</li>
+                            <li>this value (execution context)</li>
+                            <li>Usage as methods</li>
+                            <li>Usage as constructors</li>
+                            <li>arguments binding</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button text-dark fw-bold collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                        Var, Let, and Const – What's the Difference?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        If you want a general rule: always declare variables with const. <br>
+                        var variables can be re-declared and updated <br>
+                        If you think the value of the variable can change, use let. <br>
+                        The let keyword was introduced in ES6 (2015). <br>
+                        Variables defined with let cannot be Redeclared. <br>
+                        Variables defined with let must be Declared before use. <br>
+                        Variables defined with let have Block Scope. <br>
+                        Before ES6 (2015), JavaScript had only Global Scope and Function Scope. <br>
+                        ES6 introduced two important new JavaScript keywords let and const. <br>
+                        These two keywords provide Block Scope in JavaScript. <br>
+                        Variables declared inside a { } block cannot be accessed from outside the block. <br>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
                 <h2 class="accordion-header" id="headingFour">
                     <button class="accordion-button text-dark fw-semibold collapsed" type="button" data-bs-toggle="collapse"
                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
@@ -172,9 +171,9 @@
         </div>
     </main>
 
-     <!-- footer section -->
-     <footer>
-        <section class="bg-white py-4 mt-5  container border-top">
+    <!-- footer section -->
+    <footer>
+        <section class="bg-white py-4 mt-5 border-top">
             <p class="text-center my-0 fw-semibold opacity-75">Copyright 2023 The Daily Sun BD</p>
         </section>
     </footer>
